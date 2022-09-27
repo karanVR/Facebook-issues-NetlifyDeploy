@@ -2,37 +2,134 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #F6F8FA;
+  width: 100%;
+  min-height: 6vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Header-color{
+  color: #F6F8FA;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo{
+  margin-left: 600px;
+  margin-right: 40px;
+}
+
+.top-issue-row{
+  background-color: #F6F8FA;
+  display: flex;
+}
+.top-issue-row1{
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.top-issue-row2{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: small;
+  padding-left: 20px;
+}
+
+svg{
+  margin: 0px;
+}
+
+p{
+  margin: 0 4px;
+}
+
+.App-header-list{
+  width: 70%;
+  color: #24292f;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 15px;
+}
+
+.top-text{
+  position: relative;
+  display: block;
+  height: 50px;
+  border-top: #F6F8FA solid 10px;
+  /* right: 600px; */
+  font-size: x-large;
+  color: #0969DA;
+  background-color: #F6F8FA;
+  width: 100%;
+}
+
+.facebook{
+  position: relative;
+  right: 620px;
+  margin-bottom: 20px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.issues-table {
+  display: block;
+  margin: 20px auto;
+  max-width: 977px;
+  border: 2px solid #e1e4e8;
+  border-radius: 7px;
+}
+
+.issue-row {
+  width: auto;
+  margin: auto 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e1e4e8;
+  color: rgb(36, 41, 46);
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 10px;
+}
+
+
+.issue-icon {
+  height: 100%;
+  margin-right: 8px;
+  padding-top: 11px;
+}
+
+.issue-text {
+  text-align: left;
+  padding-top: 8px;
+}
+
+.issue-title {
+  color: #24292e;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  margin-bottom: 3px;
+}
+
+.issue-subtitle {
+  color: #586069;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }

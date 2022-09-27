@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import IssueIcon from "./components/IssueIcon";
+import IssueRow from "./components/IssueRow";
+import { Circle, CheckLg, CaretDownFill } from "react-bootstrap-icons";
 
-function App() {
+
+export default function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const response = await fetch(
+        `https://api.github.com/repos/facebook/react/issues`
+      );
+      setData(await response.json());
+      // console.log('json file----',  json)
+      // setData([...data, json]);
+      console.log("data file -------", data);
+    };
+    fetchItems();
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="issue-row">
+        <div className="issues-table">
+          <div className="top-issue-row">
+            <div className="top-issue-row1"><Circle /><p>    625 open  <CheckLg /> 10104 closed</p></div>
+            <div>
+              <ul className="top-issue-row2">
+              <CaretDownFill />
+                <li>author</li>
+                <CaretDownFill />
+                <li>label</li>
+                <CaretDownFill />
+                <li>project</li>
+                <CaretDownFill />
+                <li>milestones</li>
+                <CaretDownFill />
+                <li>asignee</li>
+                <CaretDownFill />
+                <li>sort</li>
+                <CaretDownFill />
+              </ul>
+            </div>
+          </div>
+          {data.map((issue) => (
+            <IssueRow key={`${issue.id} _issue_row`} issue={issue} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
