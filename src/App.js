@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
-import IssueIcon from "./components/IssueIcon";
 import IssueRow from "./components/IssueRow";
 import { Circle, CheckLg, CaretDownFill } from "react-bootstrap-icons";
 
